@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+// Rutas para el consumo de la API para prestamos
+Route::get("/prestamos", "App\Http\Controllers\PrestamoController@index"); // GET
+Route::post("/prestamos/crear", "App\Http\Controllers\PrestamoController@store"); // POST
+Route::put("/prestamos/actualizar/{id}", "App\Http\Controllers\PrestamoController@update"); // PUT
+Route::delete("/prestamos/eliminar/{id}", "App\Http\Controllers\PrestamoController@destroy"); // DELETE
